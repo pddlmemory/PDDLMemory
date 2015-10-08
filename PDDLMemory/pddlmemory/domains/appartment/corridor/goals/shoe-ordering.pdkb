@@ -1,0 +1,4 @@
+(is-at shoe_cabinet shoepair1)           ; shoe ordering (co)
+(is-at shoe_cabinet shoepair2)
+(is-at shoe_cabinet shoepair3)
+(own-location pass_ki_co)

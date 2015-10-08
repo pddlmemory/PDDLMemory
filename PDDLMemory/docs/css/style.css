@@ -1,0 +1,41 @@
+body			{ background-color: lightgrey;
+				  font-family: Arial;
+				  margin:20px; }
+				  
+h1				{ padding-left: 25px;
+				  color: #333333}
+				  
+h2				{ padding-left: 30px;
+				  color: #333333}
+				  
+				  				  
+h3				{ 
+				  color: #333333}				  
+
+.table 			{ display: table;
+				  width: 100%;
+				  border-spacing: 40px 15px;}
+
+.row 			{ display: table-row;}
+
+.cell 			{ display: table-cell;
+				  width: 30%;
+				  padding: 10px }
+
+.redbox		{ background-color : rgba(0,60,85,0.6);
+				  color: white;
+				}
+		
+.greenbox 		{ background-color: #272822;
+				  color: #e6db74;
+				}
+
+.bluebox 		{ background-color:rgba(85,0,0,0.6);
+				  color: white;
+
+				}
+				
+.thumb			{ border:	1px solid grey;
+				}
+				
+a				{ color: black;}

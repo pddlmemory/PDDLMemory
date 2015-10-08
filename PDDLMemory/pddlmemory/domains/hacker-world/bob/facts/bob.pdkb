@@ -1,0 +1,2 @@
+(has-access bob bob-email)
+(has-access bob pizza_de)

@@ -1,0 +1,16 @@
+; Knowledge about room "closet"
+
+; *** locations ***
+(is-in closet closet_cabinet)
+(is-in closet closet_floor)
+
+; *** facts ***
+(is-at closet_cabinet lightbulb3)
+(is-at closet_cabinet lightbulb4)
+(is-at closet_floor cleaning_products)
+(is-at closet_floor vacuum_cleaner)
+(is-intact lightbulb3)
+(is-intact lightbulb4)
+
+; *** doors ***
+(is-in closet door_cl_co)

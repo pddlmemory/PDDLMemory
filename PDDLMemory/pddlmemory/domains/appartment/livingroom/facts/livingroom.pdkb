@@ -1,0 +1,37 @@
+; Knowledge about room "living room"
+
+; *** locations *** 
+(is-in livingroom couch)
+(is-in livingroom couchlamp)
+(is-in livingroom bookshelf)
+(is-in livingroom liro_table)
+(is-in livingroom liro_window1)
+(is-in livingroom liro_window2)
+(is-in livingroom liro_window3)
+(is-in livingroom liro_window4)
+(is-in livingroom liro_window5)
+(is-in livingroom liro_window6)
+(is-in livingroom liro_lamp)
+(is-in livingroom liro_lightswitch)
+(is-in livingroom liro_lightswitch_cl)
+(is-in livingroom liro_floor)
+
+; *** facts ***
+(is-at liro_table chair1)
+(is-at liro_table chair2)
+(is-at liro_table chair3)
+(is-at liro_table chair4)
+(is-at bookshelf book1)
+(is-at bookshelf book2)
+(is-at liro_lamp lightbulb6)
+(is-at couchlamp lightbulb10)
+(is-attached lightbulb6)
+(is-attached lightbulb10)
+(is-intact lightbulb6)
+(is-intact lightbulb10)
+(is-working liro_lamp) ; this should follow from is_intact() and is_attached()
+(is-working couchlamp) ; this should follow from is_intact() and is_attached()
+
+; *** doors ***
+(is-in livingroom door_li_co)
+

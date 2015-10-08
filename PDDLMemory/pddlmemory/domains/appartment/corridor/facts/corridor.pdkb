@@ -1,0 +1,25 @@
+; Knowledge about room "corridor"
+
+; locations
+(is-in corridor shoe_cabinet)
+(is-in corridor coat_stand)
+(is-in corridor co_lamp)
+(is-in corridor co_lightswitch)
+(is-in corridor co_garbage)
+(is-in corridor co_floor)
+(is-in corridor pass_ki_co)
+(is-in corridor door_be_co)
+(is-in corridor door_li_co)
+(is-in corridor door_cl_co)
+(is-in corridor door_ba_co)
+(is-in corridor door_wc_co)
+(is-in corridor door_out)
+
+; facts
+(is-at shoe_cabinet shoepair1)
+(is-at shoe_cabinet shoepair2)
+(is-at coat_stand shoepair3)
+(is-at co_lamp lightbulb5)
+(is-attached lightbulb5)
+(is-intact lightbulb5)
+(is-working co_lamp) ; this should follow from is_intact() and is_attached()

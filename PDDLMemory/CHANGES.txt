@@ -1,0 +1,16 @@
+v0.1.0, 22.06.2014 -- Initial release.
+v0.1.1, 01.06.2015 -- Code upgrades, Sublime Integration, CSV Output
+
+KNOWN BUGS:
+===
+
+v0.1.1.
+
+* Planning time in the CSV output produced by bin/memoplan_csv is 0.00s if
+no plan has been found. Should be fixed in pddlmemory/launcher.py. (by measuring
+planner execution time) 
+Currently the planning time is obtained by the parser. The planner (ff) outputs a 
+"time spent" line if a plan has been found. No output is produced if no plan
+has been found, so the planning time is set to 0.00s by default. 
+
+

@@ -1,0 +1,7 @@
+; goal : change bed sheets (be)
+
+(is-dirty-mobj laundry1)
+(not (is-dirty-mobj laundry2))
+(is-at laundry_basket laundry1)
+(is-at bed laundry2)
+(own-location pass_ki_co)

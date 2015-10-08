@@ -1,0 +1,42 @@
+; Knowledge about room "kitchen"
+
+; *** locations *** 
+(is-in kitchen fridge)
+(is-in kitchen oven)
+(is-in kitchen hotplates)
+(is-in kitchen plot1)
+(is-in kitchen plot2)
+(is-in kitchen dish_rack)
+(is-in kitchen waterboiler)
+(is-in kitchen ki_table)
+(is-in kitchen ki_sink)
+(is-in kitchen ki_cabinet1)
+(is-in kitchen ki_cabinet2) 
+(is-in kitchen ki_left_drawer)
+(is-in kitchen ki_right_drawer)
+(is-in kitchen ki_lamp)
+(is-in kitchen ki_lightswitch)
+(is-in kitchen ki_garbage)
+(is-in kitchen ki_floor)
+(is-in kitchen ki_window)
+
+; *** facts ***
+(is-at ki_cabinet1 fruit_tea)
+(is-at ki_cabinet2 cup1)
+(is-at ki_cabinet2 cup2)
+(is-at ki_cabinet2 cup3)
+(is-at ki_cabinet2 cup4)
+(is-at ki_left_drawer small_spoon1)
+(is-at ki_left_drawer small_spoon2)
+(is-at ki_left_drawer small_spoon3)
+(is-at ki_left_drawer small_spoon4)
+(is-at plot1 waterpot)
+(is-at plot1 teapot)
+(is-at dish_rack big_cup)
+(is-at ki_lamp lightbulb7)
+(is-attached lightbulb7)
+(is-intact lightbulb7)
+(is-working ki_lamp) ; this should follow from is_intact() and is_attached()
+
+; *** doors ***
+(is-in kitchen pass_ki_co)

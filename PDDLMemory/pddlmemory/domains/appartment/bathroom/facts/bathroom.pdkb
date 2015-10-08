@@ -1,0 +1,30 @@
+; Knowledge about room "bathroom"
+
+; *** locations ***
+(is-in bathroom shower)
+(is-in bathroom towel_holder)
+(is-in bathroom bathroom_mirror)
+(is-in bathroom bathroom_sink)
+(is-in bathroom bathroom_cabinet)
+(is-in bathroom bathroom_lamp)
+(is-in bathroom bathroom_floor)
+(is-in bathroom bathroom_window)
+(is-in bathroom bathroom_lightswitch)
+
+; *** facts ***
+(is-at bathroom_sink ba_soap)
+(is-at shower shampoo)
+(is-at towel_holder towel1)
+(is-at towel_holder towel2)
+(is-at bathroom_lamp lightbulb1)
+(is-attached lightbulb1)
+(is-intact lightbulb1)
+(is-working bathroom_lamp) ; this should follow from is_intact() and is_attached()
+
+; *** goal facts ***
+(is-dirty-loc shower)					; goal: clean bathroom
+
+; *** doors ***
+(is-in bathroom door_ba_co)
+
+

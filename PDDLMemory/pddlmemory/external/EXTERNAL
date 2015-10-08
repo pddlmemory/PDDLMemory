@@ -1,0 +1,7 @@
+The external folder contains external binaries and libraries used by PDDLMemory
+
+ff			Fast-Forward Planner (http://fai.cs.uni-saarland.de/hoffmann/ff.html)
+parser.py		A part of the Fast-Downward Planner used to parse PDDL (http://www.fast-downward.org/)
+VAL			The Plan Validator (not yet used, but provides useful functions for implementing a WorldUpdater)
+			http://www.inf.kcl.ac.uk/research/groups/PLANNING/
+

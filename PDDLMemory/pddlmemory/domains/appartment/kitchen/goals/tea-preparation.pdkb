@@ -1,0 +1,5 @@
+(is-at waterboiler cup1)                 ; tea preparation (ki)
+(is-at waterboiler waterpot)
+(is-at waterboiler fruit_tea)
+(is-at waterboiler small_spoon1)
+(own-location pass_ki_co)

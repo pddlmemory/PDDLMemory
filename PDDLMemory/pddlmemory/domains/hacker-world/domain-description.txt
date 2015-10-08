@@ -1,0 +1,10 @@
+The hacker-world domain represents a world in which a hacker (mallory) has to gain access to different services that can be accessed by non-hackers (alice and bob). In order to do so, he has to first find/eat enough pizza. The initial domain was created as part of the MyPDDL package. It was later adapted and modeled using the PDDLMemory SublimeText plugin.
+
+Recommended parameters: 
+- Activation Limit: 3
+- Strengtening Factor: 2
+- Maximum Iterations: 20
+
+Author: Volker Strobel
+PDDLMemory problem: Ivo Chichkov
+Created: 20.06.2015

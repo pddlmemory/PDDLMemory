@@ -1,0 +1,3 @@
+(is-working wc_lamp)                     ; change lightbulb (wc + cl)
+(is-at co_garbage lightbulb2)            ; throw the defect lightbulb away, figure out which one this is automatically
+(own-location pass_ki_co)

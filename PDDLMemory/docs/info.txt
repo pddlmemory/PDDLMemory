@@ -1,0 +1,13 @@
+===========
+PDDL Memory
+===========
+
+This is the PDDL Memory module which implements a simple
+memory system for AI planning with PDDL.
+
+For further information please consult the author's Bachelor thesis
+or look at the html documentation (index.html).
+
+Author: Ivo Chichkov
+
+===========

@@ -1,0 +1,23 @@
+; Knowledge about room "wc"
+
+; *** locations *** 
+(is-in wc toilet)
+(is-in wc wc_window)
+(is-in wc wc_sink)
+(is-in wc wc_lightswitch)
+(is-in wc wc_lamp)
+(is-in wc wc_floor)
+
+; *** facts ***
+(is-at toilet toilet_paper)
+(is-at toilet wc_wastebin)
+(is-at wc_sink wc_soap)
+(is-at wc_lamp lightbulb2)
+(is-attached lightbulb2)
+
+; *** goal facts ***
+(not (is-intact lightbulb2))		; Goal "change lightbulb"
+(not (is-working wc_lamp)) 			; this should follow from is_intact() and is_attached_to()
+
+; *** doors ***
+(is-in wc door_wc_co)

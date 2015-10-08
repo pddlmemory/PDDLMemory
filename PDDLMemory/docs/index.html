@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>PDDLMemory - A Short-Term-Memory for AI-Planning</title>
+    <meta name="description" content="A Short-Term Memory for AI-Planning">
+    <meta name="author" content="Ivo Chichkov">
+    <meta name="keywords" content="PDDL, AI, Planning, Short-Term Memory, STM, LTM">
+
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+<h1>PDDLMemory - A Short-Term Memory for AI Planning </h1>
+
+<ol>
+	<li><a href="#install">Installation</a></li>
+	<li><a href="#run">Running PDDLMemory</a></li>
+	<li><a href="#model">Modelling domains in PDDLMemory</a></li>
+</ol>
+
+<h2><a name="install">1. Installation</a></h2>
+<div class="table">
+  <div class="row">
+	    <span class="cell redbox"><u>PDDLMemory</u></span>
+		<span class="cell greenbox"><u>Sublime Plugin</u></span>
+		<span class="cell bluebox"><u>Notes</u></span>
+  </div>
+  <div class="row">
+	      <span class="cell redbox"><b>Install PDDLMemory</b><br><br>Copy the PDDLMemory folder to a local folder where you have read and write
+access. PDDLMemory requires Python 2.x installed on a Linux machine.</span>
+    <span class="cell"></span>
+     <span class="cell"></span>
+
+  </div>
+  <div class="row">
+    <span class="cell redbox"><b>Configure PDDLMemory</b><br><br>
+    
+    
+    Make sure to go trough the config file (PDDLMemory/pddlmemory/config.py) and adjust the <i>pddlmemory_path</i> variable.<br><br>
+    pddlmemory_path = "/<i>path</i>/PDDLMemory/pddlmemory/"<br><br>
+    The variable <i>current_domain_name</i> should be set to the name of the current domain (default: appartment). 
+    </span>
+    <span class="cell"></span>
+    
+    <span class="cell bluebox">
+    There are two important paths:<br><br>
+    <i><b>1)</b> /<i>path</i>/PDDLMemory/</i><br>
+    <i><b>2)</b> /<i>path</i>/PDDLMemory/pddlmemory/</i><br><br>
+    
+    <b>1)</b> contains everything related to the module including binaries (bin) and documentation (docs).<br><br>
+    <b>2)</b> contains the actual code of the module.<br><br>
+    
+    </span>
+  
+ </div>
+ 
+   <div class="row">
+    <span class="cell redbox"><b>Extend $PYTHONPATH variable</b><br><br>The environment variable <i>$PYTHONPATH</i> should include the path to PDDLMemory. It can be set permanently in the .bashrc or .profile file.<br><br>
+    export PYTHONPATH="/<i>path</i>/PDDLMemory/ : ..."
+	<br><br>
+
+    </span>
+    <span class="cell"></span>
+     <span class="cell">
+	 <span>
+ </div>
+ 
+<div class="row">
+    <span class="cell redbox"><b>Test the PDDLMemory Installation</b><br><br>At this point PDDLMemory should be installed and you can test the installation using the provided <i>appartment</i> domain. You can run the launcher script <i>memoplan</i> from the command line<br><br>./bin/memoplan_csv&nbsp;&nbsp;--list-active-items<br><br> 
+    This command lists all the chunks that are active in memory. </span>
+    <span class="cell"></span>
+     <span class="cell bluebox">Planning on the current domain is done with the -s option (planning <b>s</b>trategy):<br><br>
+	Some examples:<br><br>
+	./bin/memoplan_csv&nbsp;&nbsp;-s directed-rehearsal<br><br>
+	./bin/memoplan_csv&nbsp;&nbsp;-s progressive-activation <i>(experimental)</i><br>
+	<br>
+	Generated plans are stored in the output folder:<br>
+	/pddlmemory/output/&lt;domain name&gt;<br><br></span>
+ </div>
+
+  <div class="row">
+    <span class="cell"></span>
+    <span class="cell greenbox"><b>Install SublimeText Plugin</b><br><br>Copy the PDDLMemory plugin folder to SublimeText's Packages folder (<i>Preferences &gt; Browse Packages...</i>)</span>
+    <span class="cell"></span>
+  </div>
+  
+  <div class="row">
+    <span class="cell"></span>
+    <span class="cell greenbox"><b>Configure SublimeText Plugin</b><br><br>Open the <i>PDDLMemory.sublime-settings</i> file and set the variable <i>pddlmemory_domain_folder</i> to point to the current domain folder, e.g:<br><br>/<i>path</i>/PDDLMemory/pddlmemory/domains/appartment/<br><br>
+    Finally, restart SublimeText.
+    </span>
+    <span class="cell bluebox">It's recommended to always restart SublimeText after making changes to the plugin configuration file.<br><br></span>
+  </div>
+  
+  <div class="row">
+    <span class="cell"></span>
+    <span class="cell greenbox"><b>Test SublimeText Plugin</b><br><br>If the plugin has been recognized by SublimeText, you should now be able to see the <i>PDDLMemory-</i>Commands in the Command Palette (Ctrl+Shift+P).<br><br></span>
+    <span class="cell"></span>
+  </div>
+</div>	
+
+
+<h2><a name="run">2. Running PDDLMemory</a></h2>
+<div class="table">
+  <div class="row">
+	    <span class="cell redbox"><u>PDDLMemory</u></span>
+		<span class="cell greenbox"><u>Sublime Plugin</u></span>
+		<span class="cell bluebox"><u>Notes</u></span>
+  </div>
+  <div class="row">
+	      <span class="cell redbox">PDDLMemory can be run in two modes:<br><br>
+	      
+	      <b>CSV</b><br><br>
+	      ./bin/memoplan_csv&nbsp;&nbsp;-s directed-rehearsal<br><br>
+	      The <i>_csv</i> mode generates a CSV file,  which is useful for analyzing the generated data with another tool.<br><br>
+	      <a href="img/screenshot_csv.png"><img class="thumb" src="img/thumb_screenshot_csv.png"></a><br><br>
+	      
+	      <b>VIZ</b><br><br>
+	      ./bin/memoplan_viz&nbsp;&nbsp;-v -s directed-rehearsal<br><br>
+	      The <i>_viz</i> mode generates a graph which displays the remaining goals as a function of the number of iterations.<br><br> 
+	      <a href="img/screenshot_viz.png"><img class="thumb" src="img/thumb_screenshot_viz.png"></a><br><br>
+	      The <i>_viz</i> mode requires some additional libraries for plotting (matplotlib, numpy, scipy).
+	      
+	      </span>
+    <span class="cell"></span>
+     <span class="cell bluebox"><b>Results</b><br><br>
+	Both PDDLMemory modes produce a 'plan' file which contains a plan that is obtained by concatenation of subplans produced py PDDLMemory.
+	<br><br>
+	<b>Note:</b>The produced plan may be a partial plan, if not all goals have been solved. This can be checked using the CSV file.<br><br>
+	
+	The _csv mode produces a csv file with information about the plan length, planing time, success of planning iterations, number of unsolved goals and the active chunks for every iteration (see <a href="img/screenshot_csv.png">screenshot</a>)<br><br>
+	
+	<b>Further parameters</b> (pddlmemory/config.py)<br><br>
+	
+	The variables <i>activation_limit</i>, <i>maximum_iterations</i> and <i>strengthening_factor</i> can be tweaked to change the behavior of PDDLMemory. These parameters are explained in comments within config.py<br><br>
+
+	<b>Known limitations</b><br><br>
+	
+	PDDLMemory was developed to illustrate the concept of using an STM in planning. Currently only a basic set of PDDL commands is supported and encoding of functions in chunks is not yet implemented.<br><br> It is recommended to start with a simple
+	domain/problem pair and to take a look at the provided "appartment" and "hacker-world" domains.
+  </div>
+  
+    <div class="row">
+	    <span class="cell redbox"><b>Getting Results</b><br><br>
+	    Results (plan and csv files) are written to the output directory of PDDLMemory:<br><br>
+	    
+	    PDDLMemory/pddlmemory/output/<i>domain</i>/plan<br>
+	    PDDLMemory/pddlmemory/output/<i>domain</i>/results.csv<br><br>
+	    </span>
+		<span class="cell"></span>
+		<span class="cell"></span>
+  </div>
+</div>
+<h2><a name="model">3. Modeling domains in PDDLMemory</a></h2>
+<div class="table">
+  <div class="row">
+	    <span class="cell redbox"><u>PDDLMemory</u></span>
+		<span class="cell greenbox"><u>Sublime Plugin</u></span>
+		<span class="cell bluebox"><u>Notes</u></span>
+  </div>
+  <div class="row">
+		<span class="cell redbox"><b>Creating a domain folder</b><br><br>
+		First a domain folder should be created in <i>pddlmemory/domains</i>.
+		It should contain two template files which always have the names:<br><br>
+		Domain file: <b>domain-template.pddl</b><br>
+		Problem file: <b>problem-template.pddl</b><br><br>
+		The <i>domain-template.pddl</i> is just a traditional PDDL domain file without modifications.
+		The <i>problem-template.pddl</i> is a PDDL problem file which is changed as explained in the next steps.
+		<i></i>	
+		</span>
+		<span class="cell"></span>
+		<span class="cell bluebox">A PDDLMemory domain folder is structured as follows:
+		<pre>		
++- Domain
+
+	domain-template.pddl
+	problem-template.pddl
+
+	+- Chunk1
+		+- facts
+		+- goals
+
+	+- Chunk2
+		+- facts
+		+- goals
+
+	(+- base 
+		+- facts
+		+- goals )
+		</pre>
+		
+You can start by copying a traditional PDDL domain/problem pair into the new domain folder and then rename<br><br>
+<i>your-domain.pddl</i> into <i>domain-template.pddl</i><br>
+<i>your-problem.pddl</i> into <i>problem-template.pddl</i>.<br><br>
+		</span>
+  </div>
+   <div class="row">
+	      <span class="cell redbox"><b>Configuring the domain</b> (pddlmemory/config.py)<br><br>
+	      PDDLMemory should be configured to use the new domain. The variable <i>current_domain_name</i> should be set to the name of the new domain folder created in the previous step.<br><br>
+	     
+	      current_domain_name =  "my-new-domain"<br>
+	      </span>
+		  <span class="cell greenbox">
+			  
+Open the <i>PDDLMemory.sublime-settings</i> file and set the variable <i>pddlmemory_domain_folder</i> to point to the new domain folder:<br><br>/<i>path</i>/PDDLMemory/pddlmemory/domains/my-new-domain/<br><br>
+  Finally, restart SublimeText.		  
+		  
+		   </span>
+		 <span class="cell"></span>
+  </div>
+  <div class="row">
+	    <span class="cell"></span>
+		<span class="cell greenbox"><b>Creating chunks</b><br><br>
+		<a href="img/screenshot_sublime_commands.png"><img class="thumb" src="img/thumb_screenshot_sublime_commands.png"></a><br><br>
+		Open the <i>problem-template.pddl</i> in SublimeText. Using the Command Palette (Ctrl+Shift+P) you can create a chunk with the <b>PDDLMemory-chunk</b> command.<br><br> Select some of the predicates from the (:init) clause. Multiple selections are also possible in SublimeText. Then, execute the <i>PDDLMemory-chunk</i> command.</span>
+		<span class="cell bluebox">Fact knowledge is the knowledge that is contained within the <i>(init:)</i> clause in the PDDL problem file. All facts should be assigned to a chunk. The template is ready when no more predicates are contained within the (:init) clause.<br><br>
+		Goal knowledge is the knowledge that is contained within the <i>(goal:)</i> clause in the PDDL problem file. All goal predicates should be added to a goal. The template is ready when no more predicates are contained within the (:goal) clause. Only the connecting (and...) clause should be left in the template.</span>
+  </div>
+  
+    <div class="row">
+	      <span class="cell"></span>
+		  <span class="cell greenbox"><b>Extending chunks</b><br><br>
+		  <a href="img/screenshot_sublime_chunks.png"><img src="img/thumb_screenshot_sublime_chunks.png" class="thumb"></a><br><br>
+		  Facts can be added to an existing chunk using the <b>PDDLMemory-add-facts</b> command. Select some predicates from the (:init) clause and execute the <b>PDDLMemory-add-facts</b> command.<br><br>
+		  
+		  The <b>PDDLMemory-add-goals</b> command is used to assign goals to chunks. Select several goal predicates that you wish to 
+		  group as a single goal. Then using the <b>PDDLMemory-add-goals</b> command give a name to the goal and add it to an existing chunk.
+		  </span>
+		  <span class="cell"></span>
+   </div>
+   
+       <div class="row">
+	      <span class="cell"></span>
+		  <span class="cell greenbox"><b>Placing insertion marks</b><br><br>
+		  <a href="img/screenshot_sublime_insert.png"><img src="img/thumb_screenshot_sublime_insert.png" class="thumb"></a><br><br>
+		 As a final step, two insertion marks should be inserted into the problem template. This is done using the <b>PDDLMemory-insert-markers</b> command. The [[KNOWLEDGE BASE]] is inserted into the (:init) clause and [[GOAL BASE]] is inserted into the (:goal) clause.</span>
+		  <span class="cell bluebox">Insertion marks tell PDDLMemory where to insert fact and goal knowledge during the planning process. The final form of the template should look like this:<br><br>
+		  <pre>
+
+(:init
+  [[KNOWLEDGE BASE]]
+)
+
+(:goal
+ (and
+  [[GOAL BASE]]
+ )
+)
+		  </pre>
+		  
+		  <br><br>
+			When ready with modeling, run PDDLMemory as described in <a href="#run">2.</a> to test the new domain and generate some results.
+
+		  </span>
+   </div>
+
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,2 @@
+(has-access alice alice-email)
+(has-access alice online-banking)

@@ -1,0 +1,5 @@
+; goal : clean bathroom (cl + ba)
+
+(not (is-dirty-loc shower))
+(is-at closet_floor cleaning_products)
+(own-location pass_ki_co)

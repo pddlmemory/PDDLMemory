@@ -1,0 +1,9 @@
+The appartment domain is the domain created to test the capabilites of PDDLMemory. It represents an appartment which is to be explored by a simulated household robot. Different household chores are defined as the goals of the robot. Individual chunks represent rooms in the appartment (PlaceNodes). The base chunk, which is never forgotten, contains the robot's location.
+
+Recommended parameters: 
+- Activation Limit: 4
+- Strengtening Factor: 2
+- Maximum Iterations: 100
+
+Author: Ivo Chichkov
+Created: 25/06/2014

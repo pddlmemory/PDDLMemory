@@ -1,0 +1,11 @@
+{
+    // Folder for the current PDDLMemory domain
+    "pddlmemory_domain_folder": "/home/user/PDDLMemory/pddlmemory/domains/appartment/",
+
+    // Perform a bracket test (#opening brackets = #closing brackets)
+    // when adding a chunk. (1 = enable, 0 = disable)
+    "bracket_test": 1,
+
+    // Display confirmation message after adding a chunk (1 = enable, 0 = disable)
+    "display_confirmation": 1,
+}

@@ -1,0 +1,34 @@
+; Knowledge about room "bedroom"
+
+; *** locations *** 
+(is-in bedroom bed)
+(is-in bedroom bedside_lamp)
+(is-in bedroom bedtable)
+(is-in bedroom wardrobe)
+(is-in bedroom desk)
+(is-in bedroom laundry_basket)
+(is-in bedroom bedroom_cabinet)
+(is-in bedroom bedroom_lamp)
+(is-in bedroom bedroom_lightswitch)
+(is-in bedroom bedside_lamp_lightswitch)
+
+; *** facts ***
+(is-at desk chair)
+(is-at desk small_chair)
+(is-at bed laundry1)
+(is-at bedroom_cabinet laundry2)
+(is-at bedroom_cabinet laundry3)
+(is-at bedroom_lamp lightbulb8)
+(is-at bedside_lamp lightbulb9)
+(is-attached lightbulb8)
+(is-attached lightbulb9)
+(is-intact lightbulb8)
+(is-intact lightbulb9)
+(is-working bedroom_lamp) ; this should follow from is_intact() and is_attached()
+(is-working bedside_lamp) ; this should follow from is_intact() and is_attached()
+
+; *** goal facts ***
+(is-dirty-mobj laundry1)					; goal: MakeBed
+
+; *** doors ***
+(is-in bedroom door_be_co)

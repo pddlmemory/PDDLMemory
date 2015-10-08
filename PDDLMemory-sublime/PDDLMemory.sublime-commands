@@ -1,0 +1,6 @@
+[
+   { "caption": "PDDLMemory-chunk: Create a new chunk (from selected fact predicates)", "command": "pddl_memory", "args": {"text": ["chunk"]} },
+   { "caption": "PDDLMemory-add-facts: Add selected fact predicates to an existing chunk", "command": "pddl_memory", "args": {"text": ["add-facts"]}},
+   { "caption": "PDDLMemory-add-goals: Add selected goal predicates to an existing chunk", "command": "pddl_memory", "args": {"text": ["add-goals"]}},
+   { "caption": "PDDLMemory-insert-markers: Insert PDDLMemory markers into the current file", "command": "pddl_memory", "args": {"text": ["insert-markers"]}}
+]
