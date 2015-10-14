@@ -8,6 +8,6 @@ In PDDLMemory the information which is known about the world is clustered into c
 
   The base implementation of PDDLMemory can be found in this repository together with detailed and easy-to-follow (but admittedly not very straightforward) [installation instructions](https://pddlmemory.github.io/pddlmemory). If you come from a planning background and are interested in experimenting with the module (which we higly encourage), it would be best to contact the [author](mailto:ivo.chichkov@hotmail.com) and exchange additional information.
 
-The PDDLMemory module is part of the [PDDL Toolbox](about:blank) together with [MyPDDL](https://github.com/Pold87/myPDDL), a modular knowledge engineering tool for PDDL.
+The PDDLMemory module is part of the [PDDL Toolbox (todo: add link)](http://about:blank) together with [MyPDDL](https://github.com/Pold87/myPDDL), a modular knowledge engineering tool for PDDL.
 
 For further info on the module also check out the README file within the module folder.
