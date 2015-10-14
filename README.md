@@ -10,4 +10,4 @@ In PDDLMemory the information which is known about the world is clustered into c
 
 The PDDLMemory module is part of the [PDDL Toolbox (todo: add link)](http://about:blank) together with [MyPDDL](https://github.com/Pold87/myPDDL), a modular knowledge engineering tool for PDDL.
 
-For further info on the module also check out the README file within the module folder.
+For further information on the module also check out the README file within the module folder.
